@@ -171,7 +171,7 @@ createApp({
         }
 
     },
-    methods: ({
+    methods: {
         changeChat(index) {
             // console.log('prossima chat', index);
             this.activeChat = index;
@@ -181,17 +181,47 @@ createApp({
 
         pushMessage(activeChat) {
             // console.log(this.newMessage);
-            const newMessageItem = {
+            const lastUserMessage = {
                 date: '10/01/2020 15:30:55',
                 message: this.newMessage.text,
                 status: 'sent',
             };
-            // console.log(newMessageItem);
+            console.log(lastUserMessage);
             // console.log(this.contacts[activeChat].messages);
-            this.contacts[activeChat].messages.push(newMessageItem);
-            this.newMessage.text= '';
-        }
-    }),
+            this.contacts[activeChat].messages.push(lastUserMessage);
+            this.newMessage.text = '';
+
+            if (this.contacts[activeChat].messages.length = this.contacts[activeChat].messages.length++) {
+                console.log('ciao');
+                const autoAnswer = {
+                    date: '10/01/2020 15:30:55',
+                    message: 'ok',
+                    status: 'received',
+                };
+                console.log(this.contacts[activeChat].messages);
+                this.contacts[activeChat].messages.push(autoAnswer)
+            }
+
+        },
+
+    },
+
+    // activated () {
+    //     this.pushMessage;
+
+    //     setInterval(() => {
+    //         console.log(this.contacts)
+    //         const newAnswerItem = {
+    //             date: '10/01/2020 15:30:55',
+    //             message: 'ok',
+    //             status: 'received',
+    //         };
+    //         console.log(newAnswerItem);
+    //         // console.log(this.contacts[activeChat]);
+    //         // this.contacts[activeChat].messages.push(newAnswerItem);
+
+    //     }, 1000)
+    // }
 
 }).mount('#app')
 
