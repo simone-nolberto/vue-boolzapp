@@ -207,26 +207,30 @@ createApp({
 
         findChat() {
             // console.log(this.check);
-            const checkCharArray = this.check.split("");
+            const checkCharArray = this.check.toLowerCase();
             console.log(checkCharArray);
 
             for (let i = 0; i < this.contacts.length; i++) {
-                const contactName = this.contacts[i].name;
-                // console.log(contactName);
-                
-                const nameCharArray = contactName.toLowerCase().split("");
-                console.log(nameCharArray);
+                const contactName = this.contacts[i].name.toLowerCase();
+                console.log( contactName);
+                let check = contactName.match(checkCharArray);
+                // console.log(check);
 
-                const found = checkCharArray.some(r => nameCharArray.includes(r))
-                // console.log(found);
-
-                if (found === true) {
-                    console.log('Ci sono!');
+                if (check === null) {
+                    // console.log('Riprova con un altro nome');
+                    this.contacts[i].visible = false;
                     
                 } else {
-                    console.log('Riprova con un altro nome');
-                    this.contacts[i].visible = false;
+                    console.log('Ci sono!');
                 }
+                
+                
+                // const nameCharArray = contactName.toLowerCase().split("");
+                // console.log(nameCharArray);
+
+                // const found = checkCharArray.some(r => nameCharArray.includes(r))
+                // // console.log(found);
+
 
             }
 
