@@ -209,6 +209,7 @@ createApp({
                 date: '10/01/2020 15:30:55',
                 message: this.newMessage.text,
                 status: 'sent',
+                menuStatus: false,
             };
             // console.log(lastUserMessage);
             // console.log(this.contacts[activeChat].messages);
@@ -221,6 +222,7 @@ createApp({
                     date: '10/01/2020 15:30:55',
                     message: 'ok',
                     status: 'received',
+                    menuStatus: false,
                 };
                 // console.log(this.contacts[activeChat].messages);
                 this.contacts[activeChat].messages.push(autoAnswer)
@@ -231,11 +233,11 @@ createApp({
         findChat() {
             // console.log(this.check);
             const checkCharArray = this.check.toLowerCase();
-            console.log(checkCharArray);
+            // console.log(checkCharArray);
 
             for (let i = 0; i < this.contacts.length; i++) {
                 const contactName = this.contacts[i].name.toLowerCase();
-                console.log(contactName);
+                // console.log(contactName);
                 let check = contactName.match(checkCharArray);
                 // console.log(check);
 
