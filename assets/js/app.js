@@ -162,9 +162,18 @@ createApp({
                     ]
                 },
             ],
+            activeChat: 0,
         }
 
     },
+    methods: ({
+        changeChat(index){
+            // console.log('prossima chat', index);
+            this.activeChat = index;
+            // console.log(this.activeChat);
+
+        }
+    })
 
 }).mount('#app')
 

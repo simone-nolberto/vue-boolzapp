@@ -45,7 +45,7 @@
 
                 </div>
                 <div class="chat-history">
-                    <div class="chat df" v-for="(contact, index) in contacts">
+                    <div @click="changeChat(index)" class="chat df" v-for="(contact, index) in contacts">
                         <div class="profile-pic">
                             <img :src="contact.avatar" alt="">
                         </div>
@@ -65,11 +65,11 @@
                 <nav class="right-nav df">
                     <div class="open-chat df">
                         <div>
-                            <img src="./assets/img/avatar_1.jpg" alt="">
+                            <img :src="contacts[activeChat].avatar" alt="">
 
                         </div>
                         <div>
-                            <h3>Michele</h3>
+                            <h3>{{contacts[activeChat].name}}</h3>
                             <p>Ultimo accesso oggi alle 16:26</p>
 
                         </div>
@@ -81,7 +81,7 @@
                     </div>
                 </nav>
                 <div class="chat-screen">
-                    <div v-for="message in contacts[0].messages" class="card" :class="{sent: message.status === sent, received: message.status === received}">
+                    <div v-for="message in contacts[activeChat].messages" class="card" :class="{sent: message.status === sent, received: message.status === received}">
                         {{message.message}}
                         <div class="chevron"><i class="fa-solid fa-chevron-down"></i>
                             <div class="card-info">
