@@ -27,6 +27,14 @@ body {
     display: flex;
 }
 
+.show{
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
 /* #region main */
 
 .container {
@@ -196,7 +204,6 @@ img {
     top: 0.5rem;
     margin: 1rem;
     padding: 1.5rem;
-    display: none;
 
     >a {
         display: block;
@@ -205,9 +212,6 @@ img {
     }
 }
 
-.chevron:hover .card-info {
-    display: flex
-}
 
 .write-your-message {
     background-color: var(--boolzapp-write);
