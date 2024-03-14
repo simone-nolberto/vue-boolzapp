@@ -96,7 +96,7 @@
                         <i class="fa-regular fa-face-smile" style="font-size: 2.5rem;"></i>
                     </div>
                     <div>
-                        <input class="text-box" type="text" name="" id="" placeholder="Scrivi un messaggio">
+                        <input @keyup.enter="pushMessage(activeChat)" class="text-box" type="text" name="" id="" placeholder="Scrivi un messaggio" v-model="newMessage.text">
                     </div>
                     <div>
                         <i class="fa-solid fa-microphone" style="font-size: 2.5rem;"></i>

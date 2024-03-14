@@ -6,6 +6,11 @@ createApp({
         return {
             sent: 'sent',
             received: 'received',
+            newMessage: {
+                date: '10/01/2020 15:30:55',
+                text: '',
+                status: 'sent'
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -167,13 +172,26 @@ createApp({
 
     },
     methods: ({
-        changeChat(index){
+        changeChat(index) {
             // console.log('prossima chat', index);
             this.activeChat = index;
             // console.log(this.activeChat);
 
+        },
+
+        pushMessage(activeChat) {
+            // console.log(this.newMessage);
+            const newMessageItem = {
+                date: '10/01/2020 15:30:55',
+                message: this.newMessage.text,
+                status: 'sent',
+            };
+            // console.log(newMessageItem);
+            // console.log(this.contacts[activeChat].messages);
+            this.contacts[activeChat].messages.push(newMessageItem);
+            this.newMessage.text= '';
         }
-    })
+    }),
 
 }).mount('#app')
 
