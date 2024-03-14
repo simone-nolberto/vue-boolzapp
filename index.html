@@ -81,19 +81,8 @@
                     </div>
                 </nav>
                 <div class="chat-screen">
-                    <div class="card sent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dicta,
-                        mollitia modi harum ad optio quas error culpa repellat quisquam aut labore magni, deleniti
-                        nostrum qui libero officiis perferendis ducimus!
-                        <div class="chevron"><i class="fa-solid fa-chevron-down"></i>
-                            <div class="card-info">
-                                <a href="#">Info messaggio</a>
-                                <a href="#">Cancella messaggio</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card received">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-                        voluptates quo dignissimos soluta deserunt numquam facere, modi ab sunt suscipit ipsum,
-                        repellendus dicta commodi, vel debitis natus distinctio. Praesentium, ab!
+                    <div v-for="message in contacts[0].messages" class="card" :class="{sent: message.status === sent, received: message.status === received}">
+                        {{message.message}}
                         <div class="chevron"><i class="fa-solid fa-chevron-down"></i>
                             <div class="card-info">
                                 <a href="#">Info messaggio</a>

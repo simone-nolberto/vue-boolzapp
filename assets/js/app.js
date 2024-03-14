@@ -4,6 +4,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            sent: 'sent',
+            received: 'received',
             contacts: [
                 {
                     name: 'Michele',
@@ -160,9 +162,9 @@ createApp({
                     ]
                 },
             ],
-
         }
 
-    }
+    },
 
 }).mount('#app')
+
