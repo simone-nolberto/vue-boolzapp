@@ -276,7 +276,7 @@ createApp({
             // console.log(activeChat, message, index);
             // console.log(this.contacts[activeChat].messages);
 
-            this.contacts[activeChat].messages.splice(index)
+            this.contacts[activeChat].messages.splice(index, 1)
 
         }
 
