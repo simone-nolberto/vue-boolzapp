@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
 <body>
 
     <main>
-        <div class="container df">
+        <div class="container df" id="app">
             <div class="left">
                 <nav class="left-nav df">
                     <div class="profile">
@@ -26,6 +27,7 @@
                         <i class="fa-solid fa-message"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
+
 
                 </nav>
                 <div class="alert df">
@@ -43,124 +45,18 @@
 
                 </div>
                 <div class="chat-history">
-                    <div class="chat df">
+                    <div class="chat df" v-for="(contact, index) in contacts">
                         <div class="profile-pic">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
+                            <img :src="contact.avatar" alt="">
                         </div>
                         <div class="chat-leak df">
                             <div>
-                                <h3>Michele</h3>
+                                <h3>{{contact.name}}</h3>
                                 <p>Lorem ipsum dolor sit amet.</p>
                             </div>
                             <div>
                                 <p>16:15</p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_2.jpg" alt="">
-                        </div>
-                        <div class="chat-leak df">
-                            <div>
-                                <h3>Fabio</h3>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div>
-                                <p>16:05</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_3.jpg" alt="">
-                        </div>
-                        <div class="chat-leak df">
-                            <div>
-                                <h3>Samuele</h3>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div>
-                                <p>16:03</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_4.jpg" alt="">
-                        </div>
-                        <div class="chat-leak df">
-                            <div>
-                                <h3>Alessandro B.</h3>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div>
-                                <p>15:50</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_5.jpg" alt="">
-                        </div>
-                        <div class="chat-leak df">
-                            <div>
-                                <h3>Alessandro L.</h3>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div>
-                                <p>15:45</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_6.jpg" alt="">
-                        </div>
-                        <div class="chat-leak df">
-                            <div>
-                                <h3>Barbara</h3>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div>
-                                <p>15:00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_7.jpg" alt="">
-                        </div>
-                        <div class="chat-leak">
-                            <h3>Luigi</h3>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_4.jpg" alt="">
-                        </div>
-                        <div class="chat-leak">
-                            <h3>Samuele</h3>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_4.jpg" alt="">
-                        </div>
-                        <div class="chat-leak">
-                            <h3>Alessandro B.</h3>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                    <div class="chat df">
-                        <div class="profil-pic">
-                            <img src="./assets/img/avatar_5.jpg" alt="">
-                        </div>
-                        <div class="chat-leak">
-                            <h3>Alessandro L.</h3>
-                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                     </div>
                 </div>
@@ -222,9 +118,10 @@
         </div>
 
 
-    
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./assets/js/app.js"></script>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./assets/js/app.js"></script>
 </body>
+
 </html>
