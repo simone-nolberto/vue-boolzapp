@@ -40,12 +40,12 @@
                     </div>
                 </div>
                 <div class="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
-
+                    <i @click="findChat()" class="fa-solid fa-magnifying-glass"></i>
+                    <input @keyup.enter="findChat()" type="text" name="" id="" v-model="check"
+                        placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-history">
-                    <div @click="changeChat(index)" class="chat df" v-for="(contact, index) in contacts">
+                    <div v-show="contact.visible" @click="changeChat(index)" class="chat df" v-for="(contact, index) in contacts">
                         <div class="profile-pic">
                             <img :src="contact.avatar" alt="">
                         </div>
@@ -81,7 +81,8 @@
                     </div>
                 </nav>
                 <div class="chat-screen">
-                    <div v-for="message in contacts[activeChat].messages" class="card" :class="{sent: message.status === sent, received: message.status === received}">
+                    <div v-for="message in contacts[activeChat].messages" class="card"
+                        :class="{sent: message.status === sent, received: message.status === received}">
                         {{message.message}}
                         <div class="chevron"><i class="fa-solid fa-chevron-down"></i>
                             <div class="card-info">
@@ -96,7 +97,8 @@
                         <i class="fa-regular fa-face-smile" style="font-size: 2.5rem;"></i>
                     </div>
                     <div>
-                        <input @keyup.enter="pushMessage(activeChat)" class="text-box" type="text" name="" id="" placeholder="Scrivi un messaggio" v-model="newMessage.text">
+                        <input @keyup.enter="pushMessage(activeChat)" class="text-box" type="text" name="" id=""
+                            placeholder="Scrivi un messaggio" v-model="newMessage.text">
                     </div>
                     <div>
                         <i class="fa-solid fa-microphone" style="font-size: 2.5rem;"></i>

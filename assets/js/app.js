@@ -168,6 +168,7 @@ createApp({
                 },
             ],
             activeChat: 0,
+            check: '',
         }
 
     },
@@ -186,23 +187,50 @@ createApp({
                 message: this.newMessage.text,
                 status: 'sent',
             };
-            console.log(lastUserMessage);
+            // console.log(lastUserMessage);
             // console.log(this.contacts[activeChat].messages);
             this.contacts[activeChat].messages.push(lastUserMessage);
             this.newMessage.text = '';
 
             if (this.contacts[activeChat].messages.length = this.contacts[activeChat].messages.length++) {
-                console.log('ciao');
+
                 const autoAnswer = {
                     date: '10/01/2020 15:30:55',
                     message: 'ok',
                     status: 'received',
                 };
-                console.log(this.contacts[activeChat].messages);
+                // console.log(this.contacts[activeChat].messages);
                 this.contacts[activeChat].messages.push(autoAnswer)
             }
 
         },
+
+        findChat() {
+            // console.log(this.check);
+            const checkCharArray = this.check.split("");
+            console.log(checkCharArray);
+
+            for (let i = 0; i < this.contacts.length; i++) {
+                const contactName = this.contacts[i].name;
+                // console.log(contactName);
+                
+                const nameCharArray = contactName.toLowerCase().split("");
+                console.log(nameCharArray);
+
+                const found = checkCharArray.some(r => nameCharArray.includes(r))
+                // console.log(found);
+
+                if (found === true) {
+                    console.log('Ci sono!');
+                    
+                } else {
+                    console.log('Riprova con un altro nome');
+                    this.contacts[i].visible = false;
+                }
+
+            }
+
+        }
 
     },
 
