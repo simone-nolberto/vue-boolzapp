@@ -221,7 +221,7 @@ createApp({
                     this.contacts[i].visible = false;
                     
                 } else {
-                    console.log('Ci sono!');
+                    // console.log('Ci sono!');
                     this.contacts[i].visible = true;
 
                 }
