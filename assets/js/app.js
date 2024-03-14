@@ -222,15 +222,10 @@ createApp({
                     
                 } else {
                     console.log('Ci sono!');
+                    this.contacts[i].visible = true;
+
                 }
-                
-                
-                // const nameCharArray = contactName.toLowerCase().split("");
-                // console.log(nameCharArray);
-
-                // const found = checkCharArray.some(r => nameCharArray.includes(r))
-                // // console.log(found);
-
+            
 
             }
 
