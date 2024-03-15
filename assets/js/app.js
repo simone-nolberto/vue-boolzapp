@@ -4,6 +4,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            activeChat: 0,
+            check: '',
             sent: 'sent',
             received: 'received',
             show: 'df',
@@ -18,6 +20,7 @@ createApp({
                     name: 'Michele',
                     avatar: './assets/img/avatar_1.jpg',
                     visible: true,
+                    lastMessageIndex: [],
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -190,8 +193,6 @@ createApp({
                     ]
                 },
             ],
-            activeChat: 0,
-            check: '',
         }
 
     },
@@ -230,6 +231,9 @@ createApp({
                 }
                 this.pushMessage;
             }, 1000);
+
+            this.lastMessageIndex = this.messages.length + 2;
+            console.log(lastMessageIndex);
 
         },
 
@@ -286,10 +290,15 @@ createApp({
 
             this.contacts[activeChat].messages.splice(index, 1)
 
-        }
+        },
+        // findIndex(messages){
+
+        //     return lastMessageIndex = this.messages.findLastIndex(messages);
+
+            
+        // },
 
     },
-
 
 }).mount('#app')
 

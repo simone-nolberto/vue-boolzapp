@@ -45,14 +45,14 @@
                         placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-history">
-                    <div v-show="contact.visible" @click="changeChat(index)" class="chat df" v-for="(contact, index) in contacts">
+                    <div v-show="contact.visible" @click="changeChat(index)" class="chat df" v-for="(contact, index, message, lastMessageIndex ) in contacts">
                         <div class="profile-pic">
                             <img :src="contact.avatar" alt="">
                         </div>
                         <div class="chat-leak df">
                             <div>
                                 <h3>{{contact.name}}</h3>
-                                <p>Lorem ipsum dolor sit amet.</p> 
+                                <p>{{contact.messages[lastMessageIndex]}}</p> 
                             </div>
                             <!-- aggiorna testo e orario messaggio -->
                             <div>
@@ -83,10 +83,10 @@
                 </nav>
                 <div class="chat-screen">
                     <div v-for="(message, index) in contacts[activeChat].messages" class="card"
-                        :class="{sent: message.status === sent, received: message.status === received}">
+                        :class="{sent: message.status === sent, received: message.status === received}" @click="showMenu(message)" @mouseleave="hideMenu(message)">
                         {{message.message}}
-                        <div  class="chevron"><i @mouseenter="showMenu(message)"  class="fa-solid fa-chevron-down"></i> 
-                            <div class="card-info" :class="{hide: message.menuStatus === false, show: message.menuStatus === true}" @mouseleave="hideMenu(message)">
+                        <div  class="chevron"><i   class="fa-solid fa-chevron-down"></i> 
+                            <div class="card-info" :class="{hide: message.menuStatus === false, show: message.menuStatus === true}" >
                                 <a href="#">Info messaggio</a>
                                 <a @click="deleteMessage(activeChat, message, index)" href="#">Cancella messaggio</a>
                             </div>

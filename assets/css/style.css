@@ -204,6 +204,7 @@ img {
     top: 0.5rem;
     margin: 1rem;
     padding: 1.5rem;
+    z-index: 1;
 
     >a {
         display: block;
