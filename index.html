@@ -85,8 +85,8 @@
                     <div v-for="(message, index) in contacts[activeChat].messages" class="card"
                         :class="{sent: message.status === sent, received: message.status === received}">
                         {{message.message}}
-                        <div  class="chevron"><i @click="menuPopUp(message)" class="fa-solid fa-chevron-down"></i> 
-                            <div class="card-info" :class="{hide: message.menuStatus === false, show: message.menuStatus === true}">
+                        <div  class="chevron"><i @mouseenter="showMenu(message)"  class="fa-solid fa-chevron-down"></i> 
+                            <div class="card-info" :class="{hide: message.menuStatus === false, show: message.menuStatus === true}" @mouseleave="hideMenu(message)">
                                 <a href="#">Info messaggio</a>
                                 <a @click="deleteMessage(activeChat, message, index)" href="#">Cancella messaggio</a>
                             </div>

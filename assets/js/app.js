@@ -256,19 +256,23 @@ createApp({
 
         },
 
-        menuPopUp(message) {
+        showMenu(message) {
             
             if (message.menuStatus === false) {
                 
                 message.menuStatus = true
                 
-            } else {
-                message.menuStatus = false
-
-            }
-            
+            }             
             // console.log(message);
             
+        },
+
+        hideMenu(message){
+            if (message.menuStatus = true) {
+                
+                message.menuStatus = false
+            } 
+            // console.log(message);
 
         },
 
