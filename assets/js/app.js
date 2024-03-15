@@ -246,6 +246,14 @@ createApp({
 
         },
 
+        deleteMessage(activeChat, message, index, lastMessageIndex) {
+            // console.log(activeChat, message, index);
+
+            this.contacts[activeChat].messages.splice(index, 1)
+
+
+        },
+
         findChat() {
 
             // console.log(this.check);
@@ -293,26 +301,32 @@ createApp({
 
         },
 
-        deleteMessage(activeChat, message, index) {
-            // console.log(activeChat, message, index);
-            // console.log(this.contacts[activeChat].messages);
-
-            this.contacts[activeChat].messages.splice(index, 1)
-
-        },
 
     },
-    mounted(){
+    mounted() {
         for (let i = 0; i < this.contacts.length; i++) {
             const contact = this.contacts[i];
             // console.log(contact);
             // console.log(contact.messages.length);
             // console.log(contact.lastMessageIndex);
-            contact.lastMessageIndex = contact.messages[contact.messages.length -1];
+            contact.lastMessageIndex = contact.messages[contact.messages.length - 1];
             // console.log(contact.lastMessageIndex);
-            console.log(this.contacts);
+            // console.log(this.contacts);
+
+            if (this.deleteMessage ) {
+                contact.lastMessageIndex = contact.messages[contact.messages.length - 1];
+                console.log(this.contacts);
             
+
+            } else if (this.pushMessage) {
+                contact.lastMessageIndex = contact.messages[contact.messages.length - 1];
+                console.log(this.contacts);
+
+            }
         }
+
+
+
     }
 
 

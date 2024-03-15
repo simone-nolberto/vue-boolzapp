@@ -92,7 +92,7 @@
                             <div class="card-info"
                                 :class="{hide: message.menuStatus === false, show: message.menuStatus === true}">
                                 <a href="#">Info messaggio</a>
-                                <a @click="deleteMessage(activeChat, message, index)" href="#">Cancella messaggio</a>
+                                <a @click="deleteMessage(activeChat, message, index, lastMessageIndex)" href="#">Cancella messaggio</a>
                             </div>
                         </div>
                     </div>
