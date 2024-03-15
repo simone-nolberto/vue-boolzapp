@@ -216,21 +216,25 @@ createApp({
             this.contacts[activeChat].messages.push(lastUserMessage);
             this.newMessage.text = '';
 
-            if (this.contacts[activeChat].messages.length = this.contacts[activeChat].messages.length++) {
+            setTimeout(() => {
+                if (this.contacts[activeChat].messages.length = this.contacts[activeChat].messages.length++) {
 
-                const autoAnswer = {
-                    date: '10/01/2020 15:30:55',
-                    message: 'ok',
-                    status: 'received',
-                    menuStatus: false,
-                };
-                // console.log(this.contacts[activeChat].messages);
-                this.contacts[activeChat].messages.push(autoAnswer)
-            }
+                    const autoAnswer = {
+                        date: '10/01/2020 15:30:55',
+                        message: 'ok',
+                        status: 'received',
+                        menuStatus: false,
+                    };
+                    // console.log(this.contacts[activeChat].messages);
+                    this.contacts[activeChat].messages.push(autoAnswer)
+                }
+                this.pushMessage;
+            }, 1000);
 
         },
 
         findChat() {
+
             // console.log(this.check);
             const checkCharArray = this.check.toLowerCase();
             // console.log(checkCharArray);
@@ -257,21 +261,21 @@ createApp({
         },
 
         showMenu(message) {
-            
+
             if (message.menuStatus === false) {
-                
+
                 message.menuStatus = true
-                
-            }             
+
+            }
             // console.log(message);
-            
+
         },
 
-        hideMenu(message){
+        hideMenu(message) {
             if (message.menuStatus = true) {
-                
+
                 message.menuStatus = false
-            } 
+            }
             // console.log(message);
 
         },
@@ -286,22 +290,6 @@ createApp({
 
     },
 
-    // activated () {
-    //     this.pushMessage;
-
-    //     setInterval(() => {
-    //         console.log(this.contacts)
-    //         const newAnswerItem = {
-    //             date: '10/01/2020 15:30:55',
-    //             message: 'ok',
-    //             status: 'received',
-    //         };
-    //         console.log(newAnswerItem);
-    //         // console.log(this.contacts[activeChat]);
-    //         // this.contacts[activeChat].messages.push(newAnswerItem);
-
-    //     }, 1000)
-    // }
 
 }).mount('#app')
 
