@@ -20,7 +20,7 @@ createApp({
                     name: 'Michele',
                     avatar: './assets/img/avatar_1.jpg',
                     visible: true,
-                    lastMessageIndex: [],
+                    lastMessageIndex: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -46,6 +46,7 @@ createApp({
                     name: 'Fabio',
                     avatar: './assets/img/avatar_2.jpg',
                     visible: true,
+                    lastMessageIndex: '',
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -71,6 +72,7 @@ createApp({
                     name: 'Samuele',
                     avatar: './assets/img/avatar_3.jpg',
                     visible: true,
+                    lastMessageIndex: '',
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -94,6 +96,7 @@ createApp({
                     name: 'Alessandro B.',
                     avatar: './assets/img/avatar_4.jpg',
                     visible: true,
+                    lastMessageIndex: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -113,6 +116,7 @@ createApp({
                     name: 'Alessandro L.',
                     avatar: './assets/img/avatar_5.jpg',
                     visible: true,
+                    lastMessageIndex: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -131,6 +135,7 @@ createApp({
                     name: 'Claudia',
                     avatar: './assets/img/avatar_6.jpg',
                     visible: true,
+                    lastMessageIndex: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -154,6 +159,7 @@ createApp({
                     name: 'Federico',
                     avatar: './assets/img/avatar_7.jpg',
                     visible: true,
+                    lastMessageIndex: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -172,6 +178,7 @@ createApp({
                     name: 'Davide',
                     avatar: './assets/img/avatar_8.jpg',
                     visible: true,
+                    lastMessageIndex: '',
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -197,6 +204,8 @@ createApp({
 
     },
     methods: {
+
+
         changeChat(index) {
             // console.log('prossima chat', index);
             this.activeChat = index;
@@ -217,6 +226,7 @@ createApp({
             this.contacts[activeChat].messages.push(lastUserMessage);
             this.newMessage.text = '';
 
+
             setTimeout(() => {
                 if (this.contacts[activeChat].messages.length = this.contacts[activeChat].messages.length++) {
 
@@ -232,8 +242,7 @@ createApp({
                 this.pushMessage;
             }, 1000);
 
-            this.lastMessageIndex = this.messages.length + 2;
-            console.log(lastMessageIndex);
+
 
         },
 
@@ -291,14 +300,21 @@ createApp({
             this.contacts[activeChat].messages.splice(index, 1)
 
         },
-        // findIndex(messages){
-
-        //     return lastMessageIndex = this.messages.findLastIndex(messages);
-
-            
-        // },
 
     },
+    mounted(){
+        for (let i = 0; i < this.contacts.length; i++) {
+            const contact = this.contacts[i];
+            // console.log(contact);
+            // console.log(contact.messages.length);
+            // console.log(contact.lastMessageIndex);
+            contact.lastMessageIndex = contact.messages[contact.messages.length -1];
+            // console.log(contact.lastMessageIndex);
+            console.log(this.contacts);
+            
+        }
+    }
+
 
 }).mount('#app')
 
