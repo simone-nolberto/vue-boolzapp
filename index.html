@@ -53,12 +53,12 @@
                         <div class="chat-leak df">
                             <div>
                                 <h3>{{contact.name}}</h3>
-                                <p>{{contact.lastMessageIndex.message}}</p>
+                                <p>{{contact.messages[contact.messages.length - 1].message}}</p>
                                 
 
                             </div>
                             <div>
-                                <p>{{contact.lastMessageIndex.date}}</p>
+                                <p>{{contact.messages[contact.messages.length - 1].date}}</p>
                             </div>
                         </div>
                     </div>

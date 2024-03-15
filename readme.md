@@ -20,6 +20,6 @@ si aspetta che voi realizziate quanto pattuito, quindi leggete la brief ed esegu
 # Milestone 4 (fatto!!)
     ● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo, Martina -> Scrivo “mar” rimangono solo Marco e Martina) 
 
-# Milestone 5 - opzionale
-    ● Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato (fatto!)
+# Milestone 5 - opzionale (fatto!)
+    ● Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato 
     ● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti (fatto a metà)
