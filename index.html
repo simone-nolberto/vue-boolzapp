@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/35c3fc4174.js" crossorigin="anonymous"></script>
 
+
 </head>
 
 <body>
@@ -54,7 +55,7 @@
                             <div>
                                 <h3>{{contact.name}}</h3>
                                 <p>{{contact.messages[contact.messages.length - 1].message}}</p>
-                                
+
 
                             </div>
                             <div>
@@ -92,7 +93,8 @@
                             <div class="card-info"
                                 :class="{hide: message.menuStatus === false, show: message.menuStatus === true}">
                                 <a href="#">Info messaggio</a>
-                                <a @click="deleteMessage(activeChat, message, index, lastMessageIndex)" href="#">Cancella messaggio</a>
+                                <a @click="deleteMessage(activeChat, message, index, lastMessageIndex)"
+                                    href="#">Cancella messaggio</a>
                             </div>
                         </div>
                     </div>
@@ -115,7 +117,9 @@
 
 
 
-
+        <script src="
+https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js
+"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="./assets/js/app.js"></script>
         <!-- <script src="luxon.js"></script> -->

@@ -206,9 +206,10 @@ createApp({
         },
 
         pushMessage(activeChat) {
+            const now = DateTime.now();
             // console.log(this.newMessage);
             const lastUserMessage = {
-                date: '10/01/2020 15:30:55',
+                date: now,
                 message: this.newMessage.text,
                 status: 'sent',
                 menuStatus: false,
@@ -243,7 +244,7 @@ createApp({
 
             this.contacts[activeChat].messages.splice(index, 1)
 
- 
+
         },
 
         findChat() {
@@ -295,6 +296,7 @@ createApp({
 
 
     },
+
 
 
 }).mount('#app')
