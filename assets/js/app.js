@@ -206,10 +206,9 @@ createApp({
         },
 
         pushMessage(activeChat) {
-            const now = DateTime.now();
             // console.log(this.newMessage);
             const lastUserMessage = {
-                date: now,
+                date: '10/01/2020 15:30:55',
                 message: this.newMessage.text,
                 status: 'sent',
                 menuStatus: false,
